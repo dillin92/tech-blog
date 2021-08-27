@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel = "stylesheet"
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+      </script> 
+    <title>Tech Blog</title>
+</head>
+<body>
+
+  <header>
+    <nav class="yellow darken-2">
+      {{#if loggedIn}}
+
+          <div class="nav-wrapper">
+              
+              <a href="../img/just-music-logo.jpg" class="brand-logo">Tech Blog</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+                  <li><a href="/homepage">Home</a></li>
+                  <li><a href="/profile"🎵>Profile🎵</a></li>
+                  <button id="logout" class="btn">🎵Logout🎵</button>
+                  {{else}}
+                  
+              </ul>
+          </div>
+          {{/if}}
+    </nav>
+  </header>
+    
+
+    <main>
+        {{> login }}
+        {{{ body }}}
+    </main>
+    
+    <footer class="page-footer yellow darken-2">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Thank You for visiting Tech Blog!</h5>
+                <p class="grey-text text-lighten-4">Brought to you by Dillin Helsley</p>
+              </div>
+              
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2021 Dillin Helsley
+            </div>
+          </div>
+    </footer>
+    {{#if loggedIn}}
+    <script href="public\javascript\logout.js"></script>
+    {{/if}}
+</body>
+
+</html>
