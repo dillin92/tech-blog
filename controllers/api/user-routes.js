@@ -50,6 +50,8 @@ router.get('/:id', (req, res) => {
 
 // Create a user
 router.post('/', (req, res) => {
+        console.log(req.body);
+
         User.create({ 
                 user_name: req.body.user_name,
                 password: req.body.password
@@ -71,6 +73,9 @@ router.post('/', (req, res) => {
 
 // Login Route
 router.post('/login', (req, res) => {
+
+        console.log(req.body);
+        
         User.findOne({
                 where: {
                         user_name: req.body.user_name,
@@ -92,8 +97,8 @@ router.post('/login', (req, res) => {
                         req.session.user_id = dbUserData.id;
                         req.session.user_name = dbUserData.user_name;
                         req.session.loggedIn = true;
-
-                        res.json({ user: dbUserData, message: 'You are now logged in!'});
+                        console.log("yo");
+                        res.redirect("/");
                 });
         });
 });

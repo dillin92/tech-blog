@@ -1,0 +1,55 @@
+<div class="row">
+  <form class="login-form col s12 ">
+    <div class="row">
+      <div>
+        <p>LOGIN</p>
+      </div>
+      <div class="input-field col s6">
+        <label for="user_name">Username:</label>
+        <input type="user_name" id="user_name" class="validate" />
+      </div>
+      <div class="input-field col s6">
+        <label for="password-login">Password:</label>
+        <input type="password" id="password-login" class="validate" />
+      </div>
+      <div>
+        <button class="btn waves-effect waves-light indigo darken-2" type="submit" name="action">Submit
+          <i class="material-icons right"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+  $(document).ready(function () {
+    $('select').material_select();
+  });
+</script>
+<div class="row">
+  <form class="signup-form col s12">
+    <div class="row">
+      <div>
+        <p>Sign-Up for Tech Blog</p>
+      </div>
+
+      <div class="input-field col s6">
+        <label for="user_name_signup">Username:</label>
+        <input type="user_name" id="user_name_signup" class="validate" />
+      </div>
+      <div class="input-field col s6">
+        <label for="password_signup">Password:</label>
+        <input type="password" id="password_signup" class="validate" />
+      </div>
+
+   
+      <div>
+        <button class="btn waves-effect waves-light indigo darken-2" type="submit" name="action">Submit
+          <i class="material-icons right"></i>
+        </button>
+      </div>
+
+    </div>
+  </form>
+</div>
+
+<script src="/js/login.js"></script>

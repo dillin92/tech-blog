@@ -1,0 +1,37 @@
+<div class="row">
+<article class="post col s11 offset-s1">
+  <a href="/homepage"> &larr; Back to homepage</a>
+  <h2 class="indigo-text text-darken-2">
+    Edit Post
+  </h2>
+  <div class="row">
+  <form class="edit-post-form col s11 offset-s1">
+    <div>
+      <input name="post-title" type="text" value="{{post.title}}" />
+      <span>({{post.post_body}})</span>
+    </div>
+    <div>
+      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+    </div>
+    <button class="btn waves-effect waves-light indigo darken-2" type="submit">Save post</button>
+    <button class="btn waves-effect waves-light indigo darken-2" type="button" class="delete-post-btn">Delete post</button>
+  </form>
+  </div>
+</article>
+</div>
+<div class="row">
+<form class="comment-form col s11 offset-s1">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button class="btn waves-effect waves-light indigo darken-2" type="submit">add comment</button>
+  </div>
+</form>
+</div>
+{{> comments post.comments}}
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>

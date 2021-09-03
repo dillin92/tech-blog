@@ -23,12 +23,12 @@ const sess = {
 app.use(session(sess));
 
 
-// const helpers = require('./utils/helper');
+const helpers = require('./utils/helper');
 
-// const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ helpers });
 
-// app.engine('handlebars', hbs.engine);
-// app.set('view engine', 'handlebars');
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 // Express middlware
 app.use(express.urlencoded({ extended: true }));
@@ -39,6 +39,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(router);
 
 // turn on connection to db and server
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
         app.listen(PORT, () => console.log('Now listening'));
 });
