@@ -15,6 +15,10 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    subject: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     post_body: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -27,6 +31,7 @@ Post.init(
         key: 'id'
       }
     }
+
   },
   {
     sequelize,
